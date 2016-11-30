@@ -12,6 +12,7 @@
 		7AC60A081DEE82E3005674FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AC60A061DEE82E3005674FB /* Main.storyboard */; };
 		7AC60A0A1DEE82E3005674FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AC60A091DEE82E3005674FB /* Assets.xcassets */; };
 		7AC60A0D1DEE82E3005674FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AC60A0B1DEE82E3005674FB /* LaunchScreen.storyboard */; };
+		7AC60A151DEE8B88005674FB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC60A141DEE8B88005674FB /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		7AC60A091DEE82E3005674FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7AC60A0C1DEE82E3005674FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7AC60A0E1DEE82E3005674FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7AC60A141DEE8B88005674FB /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				7AC60A021DEE82E3005674FB /* AppDelegate.swift */,
 				7AC60A041DEE82E3005674FB /* ViewController.swift */,
+				7AC60A141DEE8B88005674FB /* SettingsViewController.swift */,
 				7AC60A061DEE82E3005674FB /* Main.storyboard */,
 				7AC60A091DEE82E3005674FB /* Assets.xcassets */,
 				7AC60A0B1DEE82E3005674FB /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			files = (
 				7AC60A051DEE82E3005674FB /* ViewController.swift in Sources */,
 				7AC60A031DEE82E3005674FB /* AppDelegate.swift in Sources */,
+				7AC60A151DEE8B88005674FB /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
