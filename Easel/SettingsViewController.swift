@@ -9,6 +9,8 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
+    
+    weak var drawingVC : DrawingViewController? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,5 +18,9 @@ class SettingsViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = false
     }
 
+    @IBAction func eraseTapped(_ sender: Any) {
+        self.drawingVC?.earseEasel()
+        _ = self.navigationController?.popViewController(animated: true)
+    }
 
 }

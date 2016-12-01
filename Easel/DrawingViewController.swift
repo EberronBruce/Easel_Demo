@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class DrawingViewController: UIViewController {
     
     @IBOutlet weak var buttonsStackView: UIStackView!
     @IBOutlet weak var imageView: UIImageView!
@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.appBecameActive), name: Notification.Name.UIApplicationDidBecomeActive, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(DrawingViewController.appBecameActive), name: Notification.Name.UIApplicationDidBecomeActive, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,6 +54,10 @@ class ViewController: UIViewController {
             context?.move(to: self.lastPoint)
             context?.addLine(to: point)
             
+            context?.setStrokeColor(red: 0.3, green: 0.8, blue: 0.2, alpha: 1.0)
+            context?.setLineCap(.round)
+            context?.setLineWidth(15)
+            
             context?.strokePath()
             
             self.imageView.image = UIGraphicsGetImageFromCurrentImageContext()
@@ -67,6 +71,17 @@ class ViewController: UIViewController {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         print("Ended")
         self.buttonsStackView.isHidden = false
+    }
+    
+    func earseEasel() {
+        self.imageView.image = nil
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "drawingToSettingsSegue" {
+            let settingsVC = segue.destination as! SettingsViewController
+            settingsVC.drawingVC = self
+        }
     }
     
     
