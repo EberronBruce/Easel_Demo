@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -34,6 +35,9 @@
                                             <constraint firstAttribute="height" constant="50" id="ss9-aO-O7g"/>
                                         </constraints>
                                         <state key="normal" image="blue"/>
+                                        <connections>
+                                            <action selector="blueTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B0h-j1-aDw"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l3e-L5-kAo">
                                         <rect key="frame" x="61" y="0.0" width="50" height="50"/>
@@ -42,6 +46,9 @@
                                             <constraint firstAttribute="height" constant="50" id="reV-Vn-ZLH"/>
                                         </constraints>
                                         <state key="normal" image="green"/>
+                                        <connections>
+                                            <action selector="greenTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ekT-bX-xJQ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="25l-gZ-ah1">
                                         <rect key="frame" x="122" y="0.0" width="50" height="50"/>
@@ -50,6 +57,9 @@
                                             <constraint firstAttribute="height" constant="50" id="wJ7-pY-zRr"/>
                                         </constraints>
                                         <state key="normal" image="red"/>
+                                        <connections>
+                                            <action selector="redTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wd6-K0-FSM"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GsH-vk-rdA">
                                         <rect key="frame" x="183" y="0.0" width="50" height="50"/>
@@ -58,6 +68,9 @@
                                             <constraint firstAttribute="height" constant="50" id="xw0-e5-ZqE"/>
                                         </constraints>
                                         <state key="normal" image="yellow"/>
+                                        <connections>
+                                            <action selector="yellowTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dsX-Ok-IFX"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EOq-Lx-WZa">
                                         <rect key="frame" x="244" y="0.0" width="50" height="50"/>
@@ -66,6 +79,9 @@
                                             <constraint firstAttribute="height" constant="50" id="ajf-sX-D0y"/>
                                         </constraints>
                                         <state key="normal" image="random"/>
+                                        <connections>
+                                            <action selector="randomTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CgG-Sd-kQz"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R6K-SP-zhM">
                                         <rect key="frame" x="305" y="0.0" width="50" height="50"/>
@@ -116,7 +132,42 @@
                     <view key="view" contentMode="scaleToFill" id="gzZ-fe-BYm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ldX-mG-VwC">
+                                <rect key="frame" x="96" y="114" width="183" height="66"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <state key="normal" title="Share Art"/>
+                                <connections>
+                                    <action selector="sharedTapped:" destination="ctH-2M-kWL" eventType="touchUpInside" id="q1v-Lx-OWb"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="45" translatesAutoresizingMaskIntoConstraints="NO" id="yiB-ps-8xX">
+                                <rect key="frame" x="14" y="296" width="347" height="31"/>
+                                <color key="minimumTrackTintColor" red="0.0" green="0.70588235290000001" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="maximumTrackTintColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="thumbTintColor" red="0.5708007812" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="sliderChanged:" destination="ctH-2M-kWL" eventType="valueChanged" id="KuU-cT-dJ5"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brush Size" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EbS-ac-Now">
+                                <rect key="frame" x="117" y="230" width="141" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yiB-ps-8xX" firstAttribute="leading" secondItem="gzZ-fe-BYm" secondAttribute="leadingMargin" id="3se-e8-Ux5"/>
+                            <constraint firstItem="yiB-ps-8xX" firstAttribute="trailing" secondItem="gzZ-fe-BYm" secondAttribute="trailingMargin" id="Rre-8J-b24"/>
+                            <constraint firstItem="ldX-mG-VwC" firstAttribute="centerX" secondItem="gzZ-fe-BYm" secondAttribute="centerX" id="SYx-Up-tvM"/>
+                            <constraint firstItem="yiB-ps-8xX" firstAttribute="centerX" secondItem="gzZ-fe-BYm" secondAttribute="centerX" id="VhQ-3l-pY2"/>
+                            <constraint firstItem="EbS-ac-Now" firstAttribute="top" secondItem="ldX-mG-VwC" secondAttribute="bottom" constant="50" id="WzC-Vg-eiD"/>
+                            <constraint firstItem="yiB-ps-8xX" firstAttribute="top" secondItem="EbS-ac-Now" secondAttribute="bottom" constant="30" id="cA8-Sj-Do2"/>
+                            <constraint firstItem="EbS-ac-Now" firstAttribute="centerX" secondItem="gzZ-fe-BYm" secondAttribute="centerX" id="tuJ-Bp-uIg"/>
+                            <constraint firstItem="ldX-mG-VwC" firstAttribute="top" secondItem="XIn-fB-JYJ" secondAttribute="bottom" constant="50" id="ua1-xz-WiM"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="jSl-QS-8eS">
                         <barButtonItem key="rightBarButtonItem" title="Erase" id="mjP-Xm-owS">
@@ -125,10 +176,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="slider" destination="yiB-ps-8xX" id="NsE-gp-RV0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JSC-Jd-ljI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1889" y="138"/>
+            <point key="canvasLocation" x="1888.8" y="137.18140929535232"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YMt-PJ-PmT">
